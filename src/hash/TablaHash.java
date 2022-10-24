@@ -4,6 +4,7 @@
 package hash;
 
 import java.math.BigInteger;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,12 +23,12 @@ public class TablaHash<K,V> {
 	private Object[] casillas = null;
 	private FuncionHash azrael = new Azrael64();
 	//private FuncionHash azrael = new JavaHash();
-	
+
 	public TablaHash() {
 		this.casillas = new Object[this.sizeCasillas];
 	}
 	
-	public TablaHash( int initialCapacity ) {
+	public TablaHash( int initialCapacity, Charset charset ) {
 		this.sizeCasillas = initialCapacity;
 		this.casillas = new Object[this.sizeCasillas];
 	}
