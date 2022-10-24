@@ -82,7 +82,7 @@ public class Main {
 		String fileName = "/esp.txt";
 		//readFileFast( tabla,fileName,charset );
 		
-		tope = 15000000;
+		tope = 10735819;
 		charset = Charset.forName("UTF-8");
 		tabla = new TablaHash<String,Object>(tope,charset);
 
