@@ -1,3 +1,2 @@
 Manifest-Version: 1.1
 Created-By: Jorge Alberto Medina Rosas
-Main-Class: main.Main

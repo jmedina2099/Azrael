@@ -3,7 +3,7 @@
  * Proprietary and confidential
  * Written by Jorge Medina <medinarosas.jorge@gmail.com>, December 2017
  */
-package hash;
+package org.azrael.hash;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;

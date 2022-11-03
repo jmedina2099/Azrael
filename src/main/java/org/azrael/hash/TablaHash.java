@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hash;
+package org.azrael.hash;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
@@ -63,7 +63,7 @@ public class TablaHash<K,V> {
 		Optional<ArrayList<Tupla<K,V>>> listaCasilla = getListaCasilla( key, indexAndHash );
 		if( listaCasilla.isPresent() ) {
 			
-			listaCasilla.get().stream().forEach( tupla -> {
+			listaCasilla.get().forEach( tupla -> {
 				if( indexAndHash[1].equals( tupla.hash ) ) {
 					System.out.println( "HASH COLISION!!! ("+
 							tupla.x+","+
@@ -172,7 +172,7 @@ public class TablaHash<K,V> {
 			if( obj != null ) {
 				@SuppressWarnings("unchecked")
 				ArrayList<Tupla<K,V>> listaCasilla = (ArrayList<Tupla<K,V>>)obj;
-				listaCasilla.stream().forEach( tupla -> {
+				listaCasilla.forEach( tupla -> {
 					put( tupla.x, tupla.y );
 				});
 			}

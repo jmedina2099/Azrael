@@ -1,7 +1,7 @@
 /**
  * 
  */
-package main;
+package org.azrael.main;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -16,7 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-import hash.TablaHash;
+import org.azrael.hash.TablaHash;
 
 /**
  * @author jmedina
@@ -75,21 +75,24 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		int tope = 174851;
+		//int tope = 174851;
+		int tope = 100;
 		Charset charset = Charset.forName("ISO-8859-1");
 		TablaHash<String,Object> tabla = new TablaHash<String,Object>(tope,charset);
 
 		String fileName = "/esp.txt";
-		//readFileFast( tabla,fileName,charset );
+		readFileFast( tabla,fileName,charset );
+		
+		System.out.println( "-"+tabla.getSizeCasillas()+"-"+tabla.getNumberOfElements()+"-"+tabla.getAverage()+"-"+tabla.getMax()+"-"+tabla.getEmpties() );
 		
 		tope = 10735819;
 		charset = Charset.forName("UTF-8");
 		tabla = new TablaHash<String,Object>(tope,charset);
 
 		fileName = "/rockyou.txt";
-		readFileFast( tabla,fileName,charset );
+		//readFileFast( tabla,fileName,charset );
 
-		System.out.println( "-"+tabla.getSizeCasillas()+"-"+tabla.getNumberOfElements()+"-"+tabla.getAverage()+"-"+tabla.getMax()+"-"+tabla.getEmpties() );
+		//System.out.println( "-"+tabla.getSizeCasillas()+"-"+tabla.getNumberOfElements()+"-"+tabla.getAverage()+"-"+tabla.getMax()+"-"+tabla.getEmpties() );
 
 		/*
 		int tope = 100000;

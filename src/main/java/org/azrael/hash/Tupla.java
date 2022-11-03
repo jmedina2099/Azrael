@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hash;
+package org.azrael.hash;
 
 import java.math.BigInteger;
 
