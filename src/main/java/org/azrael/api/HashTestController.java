@@ -32,12 +32,12 @@ public class HashTestController {
 	@PostMapping("/dictionary")
 	public ResponseEntity<Estadistica> index(@RequestBody TestHash testHash) {
 
-		String fileName = "/esp.txt";
-		int tope = 174851;
-		Charset charset = Charset.forName("ISO-8859-1");
+		String fileName;
+		int tope;
+		Charset charset;
 		TablaHash<String, Object> tabla;
 
-		Dictionary dict = Dictionary.getEnum(testHash.fileName);
+		Dictionary dict = Dictionary.getEnum(testHash.testName);
 		switch (dict) {
 		case EN:
 			fileName = "/en.txt";
@@ -55,7 +55,7 @@ public class HashTestController {
 			charset = Charset.forName("UTF-8");
 			break;
 		default:
-			break;
+			throw new IllegalArgumentException("Invalid Dictionary value: " + dict);
 		}
 
 		tabla = new TablaHash<String, Object>(tope, charset);

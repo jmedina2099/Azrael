@@ -99,12 +99,10 @@ public class TablaHash<K,V> {
 	
 	public Integer[] getStats() {
 		@SuppressWarnings("unchecked")
-		List<Integer> listaSizes = Arrays.stream(this.casillas).mapToInt( obj -> {
-			if( obj == null ) {
-				return 0;
-			}
-			return ((ArrayList<Tupla<K,V>>)obj).size();
-		}).boxed().collect( Collectors.toList() );
+		List<Integer> listaSizes = Arrays.stream(this.casillas)
+			.mapToInt( obj -> obj == null? 0: ((ArrayList<Tupla<K,V>>)obj).size() )
+			.boxed()
+			.collect( Collectors.toList() );
 
 		return listaSizes.toArray( new Integer[0] );
 	}
@@ -178,7 +176,7 @@ public class TablaHash<K,V> {
 			}
 		});
 		
-		numberOfRehash++;
+		this.numberOfRehash++;
 	}
 	
 }

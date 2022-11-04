@@ -10,10 +10,10 @@ import java.nio.charset.StandardCharsets;
  * @author jmedina
  *
  */
+@FunctionalInterface
 public interface FuncionHash {
 
 	public BigInteger getHash( byte[] o);
-	public String toString();
 	
 	default BigInteger compute(String key, int size, BigInteger... indexAndHash ) {
 		indexAndHash[1] = getHash(key.getBytes(StandardCharsets.UTF_8));

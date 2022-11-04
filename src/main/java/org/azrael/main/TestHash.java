@@ -9,8 +9,7 @@ package org.azrael.main;
  */
 public class TestHash {
 	
-	public String fileName = "";
-	public String charsetName = "";
+	public String testName = "";
 	
 	public TestHash() {
 	}
